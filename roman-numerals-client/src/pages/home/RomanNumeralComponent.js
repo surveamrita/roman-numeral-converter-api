@@ -29,6 +29,11 @@ const validateInput = (input) => {
   return null;
 };
 
+const getApiUrl = () => {
+  const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+  return apiUrl.trim();
+};
+
 const RomanNumeralComponent = ({ isDarkMode, onThemeChange }) => {
   const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState('');
@@ -67,7 +72,8 @@ const RomanNumeralComponent = ({ isDarkMode, onThemeChange }) => {
     }
 
     try {
-      const response = await fetch(`/romannumeral?query=${inputValue}`);
+      const apiUrl = getApiUrl();
+      const response = await fetch(`${apiUrl}/romannumeral?query=${inputValue}`);
       const data = await handleApiResponse(response);
       if (data) setResult(data.output);
     } catch (err) {
