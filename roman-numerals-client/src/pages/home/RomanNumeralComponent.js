@@ -72,12 +72,33 @@ const RomanNumeralComponent = ({ isDarkMode, onThemeChange }) => {
     }
 
     try {
-      const apiUrl = getApiUrl();
-      const response = await fetch(`${apiUrl}/romannumeral?query=${inputValue}`);
+      const apiUrl = process.env.REACT_APP_API_URL;
+      console.log('Environment variables:', process.env); // Log all env vars
+      console.log('API URL:', apiUrl);
+      const fullUrl = `${apiUrl}/romannumeral?query=${inputValue}`;
+      console.log('Attempting to fetch from:', fullUrl);
+
+      const response = await fetch(fullUrl, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+        }
+      });
+      
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+      
       const data = await handleApiResponse(response);
+      console.log('Response data:', data);
+      
       if (data) setResult(data.output);
     } catch (err) {
-      setErrorMessage('Unable to connect to the server. Please try again later.');
+      console.error('Error details:', {
+        message: err.message,
+        stack: err.stack,
+        name: err.name
+      });
+      setErrorMessage(`Error: ${err.message}`);
       setShowErrorDialog(true);
     } finally {
       setLoading(false);

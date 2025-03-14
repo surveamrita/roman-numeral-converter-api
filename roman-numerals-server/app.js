@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 // Import routers and middleware
@@ -7,6 +8,9 @@ const healthCheckRouter = require('./routes/healthCheck');
 const configureLogging = require('./routes/logging');
 const startHealthCheckJob = require('./jobs/healthCheckJob');
 const { SERVER } = require('./config/constants');
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Configure logging
 configureLogging(app);

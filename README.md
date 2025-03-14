@@ -28,11 +28,14 @@ docker-compose up --build
 ```
 
 ### Running on Play with Docker (PWD)
-1. Get your PWD URL from the browser (e.g., http://ip172-18-0-81-cva21da91nsg00cmmtn0-8080.direct.labs.play-with-docker.com)
+# Replace with your PWD URL
+export PWD_URL=http://ip172-18-0-81-cva21da91nsg00cmmtn0-8080.direct.labs.play-with-docker.com
 
-2. Set the API URL environment variable:
-```bash
-export API_URL=http://ip172-18-0-81-cva21da91nsg00cmmtn0-8080.direct.labs.play-with-docker.com
+# Update docker-compose.yml temporarily
+sed -i "s|http://server:8080|$PWD_URL|g" docker-compose.yml
+
+# Run docker-compose
+docker-compose up --build
 ```
 
 3. Run Docker Compose:
