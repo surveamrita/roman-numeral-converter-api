@@ -1,0 +1,15 @@
+[
+    { "integerValue": 1000, "romanNumeral": "M" },
+    { "integerValue": 900, "romanNumeral": "CM" },
+    { "integerValue": 500, "romanNumeral": "D" },
+    { "integerValue": 400, "romanNumeral": "CD" },
+    { "integerValue": 100, "romanNumeral": "C" },
+    { "integerValue": 90, "romanNumeral": "XC" },
+    { "integerValue": 50, "romanNumeral": "L" },
+    { "integerValue": 40, "romanNumeral": "XL" },
+    { "integerValue": 10, "romanNumeral": "X" },
+    { "integerValue": 9, "romanNumeral": "IX" },
+    { "integerValue": 5, "romanNumeral": "V" },
+    { "integerValue": 4, "romanNumeral": "IV" },
+    { "integerValue": 1, "romanNumeral": "I" }
+] 

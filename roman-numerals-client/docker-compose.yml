@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: ./roman-numerals-client
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_API_URL: http://roman-numerals-server:8080  # Pass API URL to the client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_API_URL=http://roman-numerals-server:8080  # Set the server URL for client
+    depends_on:
+      - roman-numerals-server
+
+  roman-numerals-server:
+    build:
+      context: ./roman-numerals-server
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - PORT=8080

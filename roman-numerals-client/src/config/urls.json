@@ -1,0 +1,10 @@
+{
+  "api": {
+    "romanNumeral": {
+      "convert": "/romannumeral?query={number}"
+    },
+    "health": {
+      "check": "/health"
+    }
+  }
+} 

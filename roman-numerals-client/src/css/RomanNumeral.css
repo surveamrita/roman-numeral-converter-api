@@ -1,0 +1,68 @@
+.error-text {
+    color: var(--spectrum-semantic-notice-color-text);
+    text-align: center;
+}
+
+/* Ensure the container fills the entire viewport */
+.converter-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    gap: var(--spectrum-global-dimension-size-300);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: var(--spectrum-global-dimension-size-200);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements horizontally */
+    justify-content: center; /* Center the form vertically */
+    width: 100%;
+    max-width: 700px;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Center input and button horizontally */
+    width: 100%;
+    gap: var(--spectrum-global-dimension-size-400);
+}
+
+.loading-indicator {
+    margin-top: var(--spectrum-global-dimension-size-200);
+    text-align: center;
+    width: 100%;
+}
+
+.result-divider {
+    width: 100%;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the result content vertically */
+    width: 100%;
+    gap: var(--spectrum-global-dimension-size-200);
+}
+
+.result-well {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}

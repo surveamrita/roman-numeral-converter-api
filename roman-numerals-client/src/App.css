@@ -1,0 +1,23 @@
+.app-container {
+    background-color: var(--spectrum-global-color-gray-75);
+    height: 100%; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+  }
+  
+  .app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center content */
+    justify-content: center; /* Vertically center content */
+    width: 100%;
+    max-width: 800px; /* Set max width if needed */
+    margin: 0 auto; /* Ensure margin auto is set for horizontal centering */
+  }
+  
+  .light-theme {
+    background-color: var(--spectrum-global-color-gray-50);
+  }
+  

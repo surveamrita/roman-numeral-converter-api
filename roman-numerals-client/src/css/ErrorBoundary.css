@@ -1,0 +1,32 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spectrum-global-dimension-size-400);
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.error-icon {
+  margin-bottom: var(--spectrum-global-dimension-size-200);
+  color: var(--spectrum-semantic-negative-color-icon);
+}
+
+.error-title {
+  margin-bottom: var(--spectrum-global-dimension-size-100);
+  color: var(--spectrum-semantic-negative-color-text);
+}
+
+.error-message {
+  margin-bottom: var(--spectrum-global-dimension-size-200);
+  color: var(--spectrum-semantic-negative-color-text);
+  max-width: 600px;
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--spectrum-global-dimension-size-200);
+  margin-top: var(--spectrum-global-dimension-size-200);
+} 
