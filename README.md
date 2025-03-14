@@ -28,11 +28,8 @@ docker-compose up --build
 ```
 
 ### Running on Play with Docker (PWD)
-# Replace with your PWD URL
-export PWD_URL=http://ip172-18-0-81-cva21da91nsg00cmmtn0-8080.direct.labs.play-with-docker.com
-
-# Update docker-compose.yml temporarily
-sed -i "s|http://server:8080|$PWD_URL|g" docker-compose.yml
+# Replace REACT_APP_API_URL with your service URL in docker-compose.xml
+REACT_APP_API_URL: http://ip172-18-0-81-cva21da91nsg00cmmtn0-8080.direct.labs.play-with-docker.com
 
 # Run docker-compose
 docker-compose up --build
