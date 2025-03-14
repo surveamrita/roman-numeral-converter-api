@@ -6,7 +6,7 @@ services:
       context: ./roman-numerals-client
       dockerfile: Dockerfile
       args:
-        # When running in Docker, use the server service name
+        # When running in Docker, replace REACT_APP_API_URL with the service url
         REACT_APP_API_URL: http://server:8080
     ports:
       - "3000:3000"

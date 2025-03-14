@@ -1,20 +1,21 @@
 # Use Node.js LTS version
-FROM node:18-alpine
+FROM node:18
 
 # Set working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Copy package files
+# Copy package files first to leverage Docker cache
 COPY package*.json ./
 
-# Install production dependencies only
-RUN npm ci --only=production
+# Install dependencies including cors
+RUN npm install cors
+RUN npm install
 
-# Copy application files
+# Copy the rest of the application
 COPY . .
 
 # Expose port 8080
 EXPOSE 8080
 
 # Start the server
-CMD ["npm", "start"]
+CMD [ "node", "app.js" ]
